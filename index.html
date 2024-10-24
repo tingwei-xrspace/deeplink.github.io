@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Example</title>
+
+  <script>
+    function redirectToUrl() {
+      const redirectUrl = "https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space";
+      window.location.href = redirectUrl;
+    }
+  </script>
+
+  <noscript>
+    <!-- 當使用者禁用 JavaScript 時，顯示提示 -->
+    <p>JavaScript is disabled in your browser. Please click <a href="https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space">this link</a> to proceed.</p>
+  </noscript>
+</head>
+<body>
+  <h1>Click the button to continue</h1>
+  <button onclick="redirectToUrl()">Go to Agent Chat Space</button>
+</body>
+</html>
