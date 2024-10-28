@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirect Example</title>
 
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 32px;
+      margin: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
   <script>
-    function redirectToUrl() {
-      const redirectUrl = "https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space";
-      window.location.href = redirectUrl;
+    function redirectToUrl(agentBundleId) {
+      const baseUrl = "https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0";
+      const url = `${baseUrl}&agentBundleId=${agentBundleId}&agentChatSpaceBundleId=CHT_AgentChat_Space`;
+      window.location.href = url;
     }
   </script>
 
   <noscript>
     <!-- 當使用者禁用 JavaScript 時，顯示提示 -->
-    <p>JavaScript is disabled in your browser. Please click <a href="https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space">this link</a> to proceed.</p>
+    <p>JavaScript is disabled in your browser. Please click <a
+        href="https://backend.dev.xrspace.io/?type=GoToAgentChatSpace&id=01HYMSVWMX611QNSJAV15SHPE0&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space">this
+        link</a> to proceed.</p>
   </noscript>
 </head>
+
 <body>
-  <h1>Click the button to continue</h1>
-  <button onclick="redirectToUrl()">Go to Agent Chat Space</button>
+  <div class="button-container">
+    <h1>Click a button to continue</h1>
+    <button onclick="redirectToUrl('Thomas')">Thomas</button>
+    <button onclick="redirectToUrl('Taylor')">Taylor</button>
+    <button onclick="redirectToUrl('DT')">DT</button>
+    <button onclick="redirectToUrl('Airline')">Airline</button>
+    <button onclick="redirectToUrl('Adidas')">Adidas</button>
+  </div>
 </body>
+
 </html>
