@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect Example</title>
+  <title>Ai Agent Deeplink</title>
 
   <style>
     body {
@@ -38,22 +38,59 @@
   </style>
 
   <script>
-    function redirectToUrl() {
-      const baseUrl = "https://backend.dev.xrspace.io/";
-      const url = `${baseUrl}?type=GoToAgentChatSpace&agentBundleId=CHT_Agent_LittleQ&agentChatSpaceBundleId=CHT_AgentChat_Space`;
+    const baseUrl = "https://backend.dev.xrspace.io/";
+    const deeplinkCommandType = "GoToAgentChatSpace";
+    const agentData = {
+      Thomas: {
+        agentBundleId: "CHT_Agent_LittleQ",
+        agentChatSpaceBundleId: "CHT_AgentChat_Space"
+      },
+      "Taylor Swift": {
+        agentBundleId: "Taylor_Agent",
+        agentChatSpaceBundleId: "Taylor_Chat_Space"
+      },
+      DT: {
+        agentBundleId: "DT_Agent",
+        agentChatSpaceBundleId: "DT_Chat_Space"
+      },
+      Airline: {
+        agentBundleId: "Airline_Agent",
+        agentChatSpaceBundleId: "Airline_Chat_Space"
+      }
+    };
+
+
+    function generateUrl(baseUrl, params) {
+      const queryString = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        .join('&');
+      return `${baseUrl}?${queryString}`;
+    }
+
+    function redirectToUrl(agentName) {
+      const params = {
+        type: deeplinkCommandType,
+        ...agentData[agentName]
+      };
+      const url = generateUrl(baseUrl, params);
       window.location.href = url;
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttonContainer = document.querySelector('.button-container');
+      Object.keys(agentData).forEach(agentName => {
+        const button = document.createElement('button');
+        button.textContent = agentName;
+        button.onclick = () => redirectToUrl(agentName);
+        buttonContainer.appendChild(button);
+      });
+    });
   </script>
 </head>
 
 <body>
   <div class="button-container">
     <h1>Click a button to continue</h1>
-    <button onclick="redirectToUrl()">Thomas</button>
-    <button onclick="redirectToUrl()">Taylor</button>
-    <button onclick="redirectToUrl()">DT</button>
-    <button onclick="redirectToUrl()">Airline</button>
-    <button onclick="redirectToUrl()">Adidas</button>
   </div>
 </body>
 
