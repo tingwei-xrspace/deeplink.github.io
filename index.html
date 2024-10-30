@@ -40,25 +40,58 @@
   <script>
     const baseUrl = "https://backend.dev.xrspace.io/";
     const deeplinkCommandType = "GoToAgentChatSpace";
-    const agentData = {
+
+    const agentDataDev = {
       Thomas: {
         agentBundleId: "CHT_Agent_LittleQ",
         agentChatSpaceBundleId: "CHT_AgentChat_Space"
-      },
-      "Taylor Swift": {
-        agentBundleId: "Taylor_Agent",
-        agentChatSpaceBundleId: "Taylor_Chat_Space"
-      },
-      DT: {
-        agentBundleId: "DT_Agent",
-        agentChatSpaceBundleId: "DT_Chat_Space"
-      },
-      Airline: {
-        agentBundleId: "Airline_Agent",
-        agentChatSpaceBundleId: "Airline_Chat_Space"
       }
     };
 
+    const agentDataPreRelease = {
+      Clara: {
+        agentBundleId: "Oct_EU_DT_Clara_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce"
+      },
+      "MediaMarkt Showroom Agent": {
+        agentBundleId: "Oct_EU_MediaMark_Clara_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_MediaMarkt_AgentChat_Sapce"
+      },
+      "MediaMarkt VIP Agent": {
+        agentBundleId: "Oct_EU_MediaMark_VIP_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_MediaMarkt_VIP_AgentChat_Sapce"
+      },
+      "AirLine Agent": {
+        agentBundleId: "Oct_EU_Airline_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_AirLine_AgentChat_Sapce"
+      },
+      "Chi-Ling": {
+        agentBundleId: "Chi-Ling_Agent",
+        agentChatSpaceBundleId: "Chi-Ling_AgentChat_Sapce"
+      },
+      "Taylor Swift": {
+        agentBundleId: "Taylor_Swift_Agent",
+        agentChatSpaceBundleId: "Taylor_Swift_AgentChat_Sapce"
+      },
+      Thomas: {
+        agentBundleId: "Oct_EU_Adidas_Thomas_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_Thomas_Muller_AgentChat_Sapce"
+      },
+      Tim: {
+        agentBundleId: "TMobile_Agent_Tim",
+        agentChatSpaceBundleId: "Tim_AgentChat_Sapce"
+      },
+      Michael: {
+        agentBundleId: "Michael_Agent",
+        agentChatSpaceBundleId: "Michael_AgentChat_Sapce"
+      },
+      "Adidas VIP Agent": {
+        agentBundleId: "Oct_EU_Adidas_VIP_Agent",
+        agentChatSpaceBundleId: "Oct_Eu_Demo_Adidas_VIP_AgentChat_Sapce"
+      }
+    };
+
+    const agentData = agentDataPreRelease;
 
     function generateUrl(baseUrl, params) {
       const queryString = Object.keys(params)
