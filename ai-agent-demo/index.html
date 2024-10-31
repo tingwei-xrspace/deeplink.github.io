@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ai Agent Deeplink</title>
+  <title>AI Agent Deeplink</title>
 
   <style>
     * {
@@ -70,7 +70,7 @@
     }
 
     .ellipsis {
-      overflow:hidden;
+      overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
@@ -100,8 +100,11 @@
 
   <script>
     const BASE_URL = "https://backend.qa.xrspace.io/";
-    const AGENT_CHAT_SPACE = "GoToAgentChatSpace";
-    const THREE_D_IM = "threedim";
+
+    const DeeplinkType = Object.freeze({
+      AGENT_CHAT_SPACE: "GoToAgentChatSpace",
+      THREE_D_IM: "threedim"
+    });
 
     const agentDataDev = {
       Thomas: {
@@ -115,7 +118,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: AGENT_CHAT_SPACE,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
           agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
@@ -125,7 +128,7 @@
         title: "2333",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: AGENT_CHAT_SPACE,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
           agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
@@ -135,7 +138,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: THREE_D_IM,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           id: "3cdc95b4-5e02-4fb1-a381-95d20093aafc,ca87b4f5-d7ef-4998-a399-5224a334b4b0",
         }
@@ -144,7 +147,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: THREE_D_IM,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           id: "3cdc95b4-5e02-4fb1-a381-95d20093aafc,ca87b4f5-d7ef-4998-a399-5224a334b4b0",
         }
@@ -153,7 +156,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: AGENT_CHAT_SPACE,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
           agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
@@ -163,7 +166,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: AGENT_CHAT_SPACE,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
           agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
@@ -173,7 +176,7 @@
         title: "Thomas Muller",
         subTitle: "1234",
         thumbnail: "public/Thomas.png",
-        deeplinkType: AGENT_CHAT_SPACE,
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
           agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
@@ -192,13 +195,13 @@
 
     function redirectToUrl(key, agent) {
       if (!agent?.deeplinkType) console.error('has no deeplink type');
-      if (agent?.deeplinkType === THREE_D_IM
+      if (agent?.deeplinkType === DEEPLINK_TYPE_THREE_D_IM
         && !agent?.params?.hasOwnProperty('id')
       ) {
         console.error('id is needed');
       }
 
-      if (agent?.deeplinkType === AGENT_CHAT_SPACE
+      if (agent?.deeplinkType === DEEPLINK_TYPE_AGENT_CHAT_SPACE
         && !agent?.params?.hasOwnProperty('agentBundleId')
         && !agent?.params?.hasOwnProperty('agentChatSpaceBundleId')
       ) {
