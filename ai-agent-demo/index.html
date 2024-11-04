@@ -99,7 +99,7 @@
   </style>
 
   <script>
-    const BASE_URL = "https://backend.qa.xrspace.io/";
+    const BASE_URL = "https://backend.dev.xrspace.io/";
 
     const DeeplinkType = Object.freeze({
       AGENT_CHAT_SPACE: "GoToAgentChatSpace",
@@ -107,84 +107,151 @@
     });
 
     const agentDataDev = {
-      Thomas: {
-        agentBundleId: "CHT_Agent_LittleQ",
-        agentChatSpaceBundleId: "CHT_AgentChat_Space"
+      agent1: {
+        title: "小 Q",
+        subTitle: "Test Agent",
+        thumbnail: "public/128/Thomas.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "CHT_Agent_LittleQ",
+          agentChatSpaceBundleId: "CHT_AgentChat_Space",
+        }
+      },
+      agent2: {
+        title: "小 Q",
+        subTitle: "Test Agent",
+        thumbnail: "public/128/Chiling.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "CHT_Agent_LittleQ",
+          agentChatSpaceBundleId: "CHT_AgentChat_Space",
+        }
+      },
+      agent3: {
+        title: "小 Q",
+        subTitle: "Test Agent",
+        thumbnail: "./public/128/Thomas.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "CHT_Agent_LittleQ",
+          agentChatSpaceBundleId: "CHT_AgentChat_Space",
+        }
       }
     };
 
     const agentDataPreRelease = {
       agent1: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "DT Agent",
+        subTitle: "-",
+        thumbnail: "public/128/Telecom.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
           agentBundleId: "Oct_EU_DT_Clara_Agent",
-          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce"
         }
       },
       agent2: {
-        title: "2333",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "MediaMarkt Showroom Agent",
+        subTitle: "MediaMarkt 制服",
+        thumbnail: "public/128/MediaMarkt_G.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          agentBundleId: "Oct_EU_DT_Clara_Agent",
-          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
+          agentBundleId: "Oct_EU_MediaMark_Clara_Agent",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_MediaMarkt_AgentChat_Sapce"
         }
       },
       agent3: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "MediaMarkt VIP Agent",
+        subTitle: "MediaMarkt 制服",
+        thumbnail: "public/128/MediaMarkt_G.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          id: "3cdc95b4-5e02-4fb1-a381-95d20093aafc,ca87b4f5-d7ef-4998-a399-5224a334b4b0",
+          agentBundleId: "Oct_EU_MediaMark_VIP_Agent",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_MediaMarkt_VIP_AgentChat_Sapce"
         }
       },
       agent4: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "AirLine Agent",
+        subTitle: "AirLine 制服",
+        thumbnail: "public/128/Chiling.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          id: "3cdc95b4-5e02-4fb1-a381-95d20093aafc,ca87b4f5-d7ef-4998-a399-5224a334b4b0",
+          agentBundleId: "Oct_EU_Airline_Agent",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_AirLine_AgentChat_Sapce"
         }
       },
       agent5: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "Chi-Ling",
+        subTitle: "-",
+        thumbnail: "public/128/Chiling.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          agentBundleId: "Oct_EU_DT_Clara_Agent",
-          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
+          agentBundleId: "Chi-Ling_Agent",
+          agentChatSpaceBundleId: "Chi-Ling_AgentChat_Sapce"
         }
       },
       agent6: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "Taylor Swift",
+        subTitle: "-",
+        thumbnail: "public/128/Taylor_Swift.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          agentBundleId: "Oct_EU_DT_Clara_Agent",
-          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
+          agentBundleId: "Taylor_Swift_Agent",
+          agentChatSpaceBundleId: "Taylor_Swift_AgentChat_Sapce"
         }
       },
       agent7: {
-        title: "Thomas Muller",
-        subTitle: "1234",
-        thumbnail: "public/Thomas.png",
+        title: "Thomas",
+        subTitle: "-",
+        thumbnail: "public/128/Thomas.png",
         deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
         params: {
-          agentBundleId: "Oct_EU_DT_Clara_Agent",
-          agentChatSpaceBundleId: "Oct_Eu_Demo_DT_Clara_AgentChat_Sapce",
+          agentBundleId: "Oct_EU_Adidas_Thomas_Agent",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_Thomas_Muller_AgentChat_Sapce"
         }
       },
+      agent8: {
+        title: "Tim",
+        subTitle: "-",
+        thumbnail: "public/128/Tim.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "TMobile_Agent_Tim",
+          agentChatSpaceBundleId: "Tim_AgentChat_Sapce"
+        }
+      },
+      agent9: {
+        title: "Michael",
+        subTitle: "-",
+        thumbnail: "public/128/Michael.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "Michael_Agent",
+          agentChatSpaceBundleId: "Michael_AgentChat_Sapce"
+        }
+      },
+      agent10: {
+        title: "Adidas VIP Agent",
+        subTitle: "-",
+        thumbnail: "public/128/Thomas.png",
+        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
+        params: {
+          agentBundleId: "Oct_EU_Adidas_VIP_Agent",
+          agentChatSpaceBundleId: "Oct_Eu_Demo_Adidas_VIP_AgentChat_Sapce"
+        }
+      }
     };
 
     const agentData = agentDataPreRelease;
+
+    async function fetchDeeplinkData() {
+      const response = await fetch(DEEPLINK_FILE);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const text = await response.text();
+      return JSON.parse(text);
+    }
 
     function generateUrl(baseUrl, params) {
       const queryString = Object.entries(params)
@@ -195,13 +262,14 @@
 
     function redirectToUrl(key, agent) {
       if (!agent?.deeplinkType) console.error('has no deeplink type');
-      if (agent?.deeplinkType === DEEPLINK_TYPE_THREE_D_IM
+
+      if (agent?.deeplinkType === DeeplinkType.THREE_D_IM
         && !agent?.params?.hasOwnProperty('id')
       ) {
         console.error('id is needed');
       }
 
-      if (agent?.deeplinkType === DEEPLINK_TYPE_AGENT_CHAT_SPACE
+      if (agent?.deeplinkType === DeeplinkType.AGENT_CHAT_SPACE
         && !agent?.params?.hasOwnProperty('agentBundleId')
         && !agent?.params?.hasOwnProperty('agentChatSpaceBundleId')
       ) {
@@ -212,36 +280,40 @@
         type: agent.deeplinkType,
         ...agentData[key].params,
       };
+
       const url = generateUrl(BASE_URL, params);
       console.log(url)
-      // window.location.href = url;
+      window.location.href = url;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const agentListContainer = document.querySelector('.list-container');
-      Object.entries(agentData).forEach(([key, agent]) => {
-        const agentItem = document.createElement('div');
-        agentItem.className = 'agent-item';
-        agentItem.onclick = () => redirectToUrl(key, agent);
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const agentListContainer = document.querySelector('.list-container');
+        Object.entries(agentData).forEach(([key, agent]) => {
+          const agentItem = document.createElement('div');
+          agentItem.className = 'agent-item';
+          agentItem.onclick = () => redirectToUrl(key, agent);
 
-        //TODO: update image
-        const agentItemIcon = document.createElement('img');
-        agentItemIcon.className = 'icon';
-        agentItemIcon.src = agent.thumbnail
+          const agentItemIcon = document.createElement('img');
+          agentItemIcon.className = 'icon';
+          agentItemIcon.src = agent.thumbnail
 
-        const agentItemTitle = document.createElement('div');
-        agentItemTitle.className = 'agent-item-title ellipsis';
-        agentItemTitle.textContent = agent.title;
+          const agentItemTitle = document.createElement('div');
+          agentItemTitle.className = 'agent-item-title ellipsis';
+          agentItemTitle.textContent = agent.title;
 
-        const agentItemSubtitle = document.createElement('div');
-        agentItemSubtitle.className = 'agent-item-subtitle ellipsis';
-        agentItemSubtitle.textContent = agent.subTitle;
+          const agentItemSubtitle = document.createElement('div');
+          agentItemSubtitle.className = 'agent-item-subtitle ellipsis';
+          agentItemSubtitle.textContent = agent.subTitle;
 
-        agentItem.appendChild(agentItemIcon);
-        agentItem.appendChild(agentItemTitle);
-        agentItem.appendChild(agentItemSubtitle);
-        agentListContainer.appendChild(agentItem);
-      });
+          agentItem.appendChild(agentItemIcon);
+          agentItem.appendChild(agentItemTitle);
+          agentItem.appendChild(agentItemSubtitle);
+          agentListContainer.appendChild(agentItem);
+        });
+      } catch (error) {
+        console.error('Failed to fetch agent data:', error);
+      }
     });
   </script>
 </head>
