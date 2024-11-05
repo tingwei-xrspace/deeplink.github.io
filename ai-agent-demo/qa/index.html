@@ -99,45 +99,12 @@
   </style>
 
   <script>
-    const BASE_URL = "https://backend.dev.xrspace.io/";
+    const BASE_URL = "https://backend.qa.xrspace.io/";
 
     const DeeplinkType = Object.freeze({
       AGENT_CHAT_SPACE: "GoToAgentChatSpace",
       THREE_D_IM: "threedim"
     });
-
-    const agentDataDev = {
-      agent1: {
-        title: "小 Q",
-        subTitle: "Test Agent",
-        thumbnail: "public/128/Thomas.png",
-        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
-        params: {
-          agentBundleId: "CHT_Agent_LittleQ",
-          agentChatSpaceBundleId: "CHT_AgentChat_Space",
-        }
-      },
-      agent2: {
-        title: "小 Q",
-        subTitle: "Test Agent",
-        thumbnail: "public/128/Chiling.png",
-        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
-        params: {
-          agentBundleId: "CHT_Agent_LittleQ",
-          agentChatSpaceBundleId: "CHT_AgentChat_Space",
-        }
-      },
-      agent3: {
-        title: "小 Q",
-        subTitle: "Test Agent",
-        thumbnail: "./public/128/Thomas.png",
-        deeplinkType: DeeplinkType.AGENT_CHAT_SPACE,
-        params: {
-          agentBundleId: "CHT_Agent_LittleQ",
-          agentChatSpaceBundleId: "CHT_AgentChat_Space",
-        }
-      }
-    };
 
     const agentDataPreRelease = {
       agent1: {
