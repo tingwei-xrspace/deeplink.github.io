@@ -27,5 +27,6 @@ aws s3 cp public $BUCKET/public --recursive
 echo Uploading file done!
 
 echo "Open the URL in the default web browser..."
+echo "Direct to : $URL"
 # Open the URL in the default web browser
 open $URL
