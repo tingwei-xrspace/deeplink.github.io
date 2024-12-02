@@ -3,7 +3,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-  FILE_PATH="deepLink/index.html";
+  FILE_PATH="deeplink/index.html";
 
 # Set environment-specific variables
 if [ "$1" = "dev" ]; then
